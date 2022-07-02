@@ -9,4 +9,4 @@
 ## 学习日记
 
 - [2022_07_01](https://github.com/Mc-GrowlR/DailySchedule/blob/main/log/2022_07_01.md)
-
+- [2022_07_02](https://github.com/Mc-GrowlR/DailySchedule/blob/main/log/2022_07_02.md)
