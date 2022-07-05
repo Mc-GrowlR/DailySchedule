@@ -37,5 +37,17 @@ fn main() {
         println!("s3 = {}",s3);
         println!("s2 = {}",s2);
     }
+
+    //copy trait
+    let a = 1;
+    let b = a;
+    println!("a = {} , b = {} ",a,b);
+    //常用的具有copy trait 有：
+    //所有整形
+    //浮点型
+    //布尔值
+    //字符类型 char
+    //元组
+    
     println!("Hello, world!");
 }
