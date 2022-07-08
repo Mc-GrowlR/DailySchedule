@@ -1,3 +1,8 @@
+#[derive(Debug)]
+enum UsState {
+    Alabama,
+    Alaska,
+}
 enum IpAddrKind {
     V4,
     V6,
@@ -18,6 +23,13 @@ enum Coin{
     Dime,
     Quarter,
 }
+enum Coin1{
+    Penny,
+    Nickel,
+    Dime,
+    Quarter(UsState),//关联数据
+}
+
 fn main() {
     let four = IpAddrKind::V4;
     let six = IpAddrKind::V6;
@@ -35,9 +47,21 @@ fn main() {
     let some_number = Some(5);
     let some_string = Some("S String");
 
-    let absent_number: OPtion<i32> = None;
+    let absent_number: Option<i32> = None;
 
     //match
+    let c = Coin1::Quarter(UsState::Alaska);
+    println!("{}",value_in_centos1(c));
+
+    //
+    let v =0u8;
+    match v {
+        1 => println!("one"),
+        3 => println!("three"),
+        5 => println!("five"),
+        7 => println!("seven"),
+        _ => (),//下划线通配符要放到最后
+    }
 }
 
 fn route(ip_king: IpAddrKind){}
@@ -49,5 +73,19 @@ fn value_in_centos(coin:Coin)->u8 {
         Coin::Nickel=>5,
         Coin::Dime=>10,
         Coin::Quarter =>25,
+    }//match表达式的结果，就是函数的返回结果
+}
+fn value_in_centos1(coin1:Coin1)->u8 {
+    match coin1 {
+        Coin1::Penny =>{
+            println!("Penny!");
+            1
+        },
+        Coin1::Nickel=>5,
+        Coin1::Dime=>10,
+        Coin1::Quarter(state) =>{
+            println!("State quater from {:?}!",state);
+            25
+        },
     }//match表达式的结果，就是函数的返回结果
 }
